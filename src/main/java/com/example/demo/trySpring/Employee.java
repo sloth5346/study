@@ -1,4 +1,4 @@
-package trySpring;
+package com.example.demo.trySpring;
 
 import lombok.Data;
 

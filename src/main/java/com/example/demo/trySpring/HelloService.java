@@ -1,4 +1,4 @@
-package trySpring;
+package com.example.demo.trySpring;
 
 import java.util.Map;
 import org.springframework.stereotype.Service;
