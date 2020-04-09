@@ -1,4 +1,4 @@
-package com.example.controller;
+package trySpring;
 
 import lombok.Data;
 

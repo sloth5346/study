@@ -1,4 +1,4 @@
-package com.example.controller;
+package trySpring;
 
 import java.util.Map;
 import org.springframework.stereotype.Repository;
