@@ -11,15 +11,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.domain.model.User;
 import com.example.demo.domain.model.repository.UserDao;
 
+
+@Transactional
 @Service
-public final class UserService {
+public class UserService {
 
 	@Autowired
-	@Qualifier("UserDaoNameJdbcImpl")
+	@Qualifier("UserDaoJdbcImpl")
 	UserDao dao;
 
 	public boolean insert(User user) {
