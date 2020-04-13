@@ -30,14 +30,14 @@ public class UserDaoJdbcImpl implements UserDao{
 	@Override
 	public int insertOne(User user) throws DataAccessException{
 		
-		int rowNumber = jdbc.update("INSERT INTO m_user(user_id,"
+		int rowNumber = jdbc.update("INSERT INTO m_user (user_id,"
 				+ " password,"
 				+ " user_name,"
 				+ " birthday,"
 				+ " age,"
 				+ " marriage,"
-				+ " role,"
-				+ " VALUES(?,?,?,?,?,?)"
+				+ " role)"
+				+ " VALUES(?,?,?,?,?,?,?)"
 				, user.getUserId()
 				, user.getPassword()
 				, user.getUserName()
@@ -116,7 +116,10 @@ public class UserDaoJdbcImpl implements UserDao{
 	
 	@Override
 	public int deleteOne(String userId) throws DataAccessException{
-		return 0;
+		
+		int rowNumber = jdbc.update("DELETE FROM m_user WHERE user_id = ?", userId);
+		
+		return rowNumber;
 	}
 	
 	@Override
