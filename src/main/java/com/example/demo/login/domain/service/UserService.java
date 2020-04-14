@@ -1,4 +1,4 @@
-package com.example.demo.domain.service;
+package com.example.demo.login.domain.service;
 
 import java.io.IOException;
 import java.nio.file.FileSystem;
@@ -13,8 +13,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.domain.model.User;
-import com.example.demo.domain.repository.UserDao;
+import com.example.demo.login.domain.model.User;
+import com.example.demo.login.domain.repository.UserDao;
 
 
 @Transactional

@@ -1,4 +1,4 @@
-package com.example.demo.domain.repository.jdbc;
+package com.example.demo.login.domain.repository.jdbc;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,8 +11,8 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.domain.model.User;
-import com.example.demo.domain.repository.UserDao;
+import com.example.demo.login.domain.model.User;
+import com.example.demo.login.domain.repository.UserDao;
 
 @Repository("UserDaoNameJdbcImpl")
 public class UserDaoNameJdbcImpl implements UserDao {

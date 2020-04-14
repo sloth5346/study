@@ -1,4 +1,4 @@
-package com.example.demo.domain.repository.jdbc;
+package com.example.demo.login.domain.repository.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +9,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
-import com.example.demo.domain.model.User;
+import com.example.demo.login.domain.model.User;
 
 public class UserResultSetExtractor implements ResultSetExtractor<List<User>> {
 

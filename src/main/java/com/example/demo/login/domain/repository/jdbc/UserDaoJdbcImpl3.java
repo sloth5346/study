@@ -1,4 +1,4 @@
-package com.example.demo.domain.repository.jdbc;
+package com.example.demo.login.domain.repository.jdbc;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.domain.model.User;
+import com.example.demo.login.domain.model.User;
 
 @Repository("UserDaoJdbcImpl3")
 public class UserDaoJdbcImpl3 extends UserDaoJdbcImpl{

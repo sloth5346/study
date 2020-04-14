@@ -1,11 +1,11 @@
-package com.example.demo.domain.repository.jdbc;
+package com.example.demo.login.domain.repository.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.example.demo.domain.model.User;
+import com.example.demo.login.domain.model.User;
 
 public class UserRowMapper implements RowMapper<User> {
 	

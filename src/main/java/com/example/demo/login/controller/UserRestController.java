@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.domain.model.User;
-import com.example.demo.domain.service.RestService;
+import com.example.demo.login.domain.model.User;
+import com.example.demo.login.domain.service.RestService;
 
 @RestController
 public class UserRestController {

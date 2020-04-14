@@ -1,4 +1,4 @@
-package com.example.demo.domain.service.mybatis;
+package com.example.demo.login.domain.service.mybatis;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.domain.model.User;
-import com.example.demo.domain.repository.mybatis.UserMapper;
-import com.example.demo.domain.service.RestService;
+import com.example.demo.login.domain.model.User;
+import com.example.demo.login.domain.repository.mybatis.UserMapper;
+import com.example.demo.login.domain.service.RestService;
 
 @Transactional
 @Service("RestServiceMybatisImpl")
