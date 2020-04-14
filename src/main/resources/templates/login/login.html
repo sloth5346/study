@@ -27,6 +27,9 @@
     <label>パスワード</label>
     <input type="password" name="password"/><br/>
     <br />
+    <input type="hidden"
+      th:name="${_csrf.parameterName}"
+      th:value="${_csrf.token}"/>
     <!--ログインボタン-->
     <button class="btnbtn-primary" type="submit">ログイン</button>
   </form>
