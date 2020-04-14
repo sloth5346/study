@@ -1,4 +1,4 @@
-package com.example.demo.domain.model.repository.jdbc;
+package com.example.demo.domain.repository.jdbc;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.domain.model.User;
-import com.example.demo.domain.model.repository.UserDao;
+import com.example.demo.domain.repository.UserDao;
 
 @Repository("UserDaoJdbcImpl")
 public class UserDaoJdbcImpl implements UserDao{

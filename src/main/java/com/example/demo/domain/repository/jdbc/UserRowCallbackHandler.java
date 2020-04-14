@@ -1,4 +1,4 @@
-package com.example.demo.domain.model.repository.jdbc;
+package com.example.demo.domain.repository.jdbc;
 
 import java.io.BufferedWriter;
 import java.io.File;

@@ -11,7 +11,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.domain.model.repository.UserDao;
+import com.example.demo.domain.repository.UserDao;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

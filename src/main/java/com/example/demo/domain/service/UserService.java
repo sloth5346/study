@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.domain.model.User;
-import com.example.demo.domain.model.repository.UserDao;
+import com.example.demo.domain.repository.UserDao;
 
 
 @Transactional
