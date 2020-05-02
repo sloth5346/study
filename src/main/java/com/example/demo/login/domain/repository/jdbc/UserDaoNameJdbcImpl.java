@@ -1,5 +1,6 @@
 package com.example.demo.login.domain.repository.jdbc;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -52,7 +53,7 @@ public class UserDaoNameJdbcImpl implements UserDao {
 				.addValue("userName", user.getUserName())
 				.addValue("birthday", user.getBirthday())
 				.addValue("age", user.getAge())
-				.addValue("marriage", user.isMarriage())
+				.addValue("marriage", user.getMarriage())
 				.addValue("role", user.getRole());
 		
 		return jdbc.update(sql, params);
@@ -81,8 +82,8 @@ public class UserDaoNameJdbcImpl implements UserDao {
         user.setPassword((String)map.get("password"));  //パスワード
         user.setUserName((String)map.get("user_name")); //ユーザー名
         user.setBirthday((Date)map.get("birthday"));    //誕生日
-        user.setAge((Integer)map.get("age"));           //年齢
-        user.setMarriage((Boolean)map.get("marriage")); //結婚ステータス
+        user.setAge((BigDecimal)map.get("age"));           //年齢
+        user.setMarriage((String)map.get("marriage")); //結婚ステータス
         user.setRole((String)map.get("role")); //ロール
 
         return user;
@@ -115,8 +116,8 @@ public class UserDaoNameJdbcImpl implements UserDao {
             user.setPassword((String)map.get("password"));  //パスワード
             user.setUserName((String)map.get("user_name")); //ユーザー名
             user.setBirthday((Date)map.get("birthday"));    //誕生日
-            user.setAge((Integer)map.get("age"));           //年齢
-            user.setMarriage((Boolean)map.get("marriage")); //結婚ステータス
+            user.setAge((BigDecimal)map.get("age"));           //年齢
+            user.setMarriage((String)map.get("marriage")); //結婚ステータス
             user.setRole((String)map.get("role")); //ロール
 
             //Listに追加
@@ -147,7 +148,7 @@ public class UserDaoNameJdbcImpl implements UserDao {
                 .addValue("userName", user.getUserName())
                 .addValue("birthday", user.getBirthday())
                 .addValue("age", user.getAge())
-                .addValue("marriage", user.isMarriage());
+                .addValue("marriage", user.getMarriage());
 
         //SQL実行
         return jdbc.update(sql, params);

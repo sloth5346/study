@@ -1,5 +1,6 @@
 package com.example.demo.login.domain.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.validation.constraints.AssertFalse;
@@ -36,8 +37,8 @@ public class SignupForm {
 	
 	@Min(value = 20, groups = ValidGroup2.class, message = "{min_check}")
     @Max(value = 100, groups = ValidGroup2.class, message = "{max_check}")
-	private int age;
+	private BigDecimal age;
 	
-	@AssertFalse(groups = ValidGroup2.class, message = "{false_check}")
-	private boolean marriage;
+	@Pattern(regexp = "false", groups = ValidGroup3.class, message = "{false_check}")
+	private String marriage;
 }

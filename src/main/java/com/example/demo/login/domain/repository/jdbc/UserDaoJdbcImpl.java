@@ -1,5 +1,6 @@
 package com.example.demo.login.domain.repository.jdbc;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -51,7 +52,7 @@ public class UserDaoJdbcImpl implements UserDao{
 				user.getUserName(),
 				user.getBirthday(),
 				user.getAge(),
-				user.isMarriage(),
+				user.getMarriage(),
 				user.getRole());
 		
 		return rowNumber;
@@ -67,8 +68,8 @@ public class UserDaoJdbcImpl implements UserDao{
 		user.setPassword((String)map.get("password"));
 		user.setUserName((String)map.get("user_name"));
 		user.setBirthday((Date)map.get("birthday"));
-		user.setAge((Integer)map.get("age"));
-		user.setMarriage((Boolean)map.get("marriage"));
+		user.setAge((BigDecimal)map.get("age"));
+		user.setMarriage((String)map.get("marriage"));
 		user.setRole((String)map.get("role"));
 		
 		return user;
@@ -91,8 +92,8 @@ public class UserDaoJdbcImpl implements UserDao{
 			user.setPassword((String)map.get("password"));
 			user.setUserName((String)map.get("user_name"));
 			user.setBirthday((Date)map.get("birthday"));
-			user.setAge((Integer)map.get("age"));
-			user.setMarriage((Boolean)map.get("marriage"));
+			user.setAge((BigDecimal)map.get("age"));
+			user.setMarriage((String)map.get("marriage"));
 			user.setRole((String)map.get("role"));
 			
 			userList.add(user);
@@ -120,7 +121,7 @@ public class UserDaoJdbcImpl implements UserDao{
 				user.getUserName(),
 				user.getBirthday(),
 				user.getAge(),
-				user.isMarriage(),
+				user.getMarriage(),
 				user.getUserId());
 		
 		//if(rowNumber > 0) {

@@ -26,8 +26,8 @@ public class UserResultSetExtractor implements ResultSetExtractor<List<User>> {
 			user.setPassword(rs.getString("password"));
 			user.setUserName(rs.getString("user_name"));
 			user.setBirthday(rs.getDate("birthday"));
-			user.setAge(rs.getInt("age"));
-			user.setMarriage(rs.getBoolean("marriage"));
+			user.setAge(rs.getBigDecimal("age"));
+			user.setMarriage(rs.getString("margeriage"));
 			user.setRole(rs.getString("role"));
 			
 			userList.add(user);

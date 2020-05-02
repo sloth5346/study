@@ -86,7 +86,7 @@ public class HomeController {
 			form.setUserName(user.getUserName());
 			form.setBirthday(user.getBirthday());
 			form.setAge(user.getAge());
-			form.setMarriage(user.isMarriage());
+			form.setMarriage(user.getMarriage());
 
 			model.addAttribute("signupForm", form);
 
@@ -107,7 +107,7 @@ public class HomeController {
 		user.setUserName(form.getUserName());
 		user.setBirthday(form.getBirthday());
 		user.setAge(form.getAge());
-		user.setMarriage(form.isMarriage());
+		user.setMarriage(form.getMarriage());
 
 		try {
 

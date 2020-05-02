@@ -28,22 +28,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private DataSource dataSource;
 	
 	
-	private static final String USER_SQL = "SELECT"
-			+ " user_id,"
-			+ " password,"
-			+ " true,"
-			+ " FROM"
-			+ " m_user"
-			+ " WHERE"
-			+ " user_id=?";
-	
-	private static final String ROLE_SQL = "SELECT"
-			+ " user_id,"
-			+ " role"
-			+ " FROM"
-			+ " m_user"
-			+ " WHERE"
-			+ " user_id=?";
+	//private static final String USER_SQL = "SELECT"
+	//		+ "  USER_ID,"
+	//		+ "  PASSWORD"
+	//		+ " FROM"
+	//		+ "  M_USER"
+	//		+ " WHERE"
+	//		+ "  user_id = ?";
+	//
+	//private static final String ROLE_SQL = "SELECT"
+	//		+ "  user_id,"
+	//		+ "  role"
+	//		+ " FROM"
+	//		+ "  m_user"
+	//		+ " WHERE"
+	//		+ "  user_id = ?";
 			
 	@Override
 	public void configure(WebSecurity web) throws Exception{
@@ -84,8 +83,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		auth.jdbcAuthentication()
 		.dataSource(dataSource)
-		.usersByUsernameQuery(USER_SQL)
-		.authoritiesByUsernameQuery(ROLE_SQL)
+		.usersByUsernameQuery("select user_id, password from m_user where user_id = ?")
+		.authoritiesByUsernameQuery("select user_id, role from m_user where user_id = ?")
 		.passwordEncoder(passwordEncoder());
 
 	}

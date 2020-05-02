@@ -68,7 +68,7 @@ public class SignupController {
 		user.setUserName(form.getUserName());
 		user.setBirthday(form.getBirthday());
 		user.setAge(form.getAge());
-		user.setMarriage(form.isMarriage());
+		user.setMarriage(form.getMarriage());
 		user.setRole("ROLE_GENERAL");
 
 		boolean result = userService.insert(user);
@@ -95,7 +95,7 @@ public class SignupController {
 	public String exceptionHanler(Exception e, Model model) {
 
 		model.addAttribute("error", "内部サーバーエラー:ExceptionHandler");
-		model.addAttribute("message", "SignupControllerでExceptionが発生しました");
+		model.addAttribute("message", "SignupControllerでExceptionが発生しました" + e);
 		model.addAttribute("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
 
 		return "error";
