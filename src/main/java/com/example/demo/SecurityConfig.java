@@ -15,9 +15,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 
+import com.example.demo.login.domain.service.LoginService;
+
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	
+	@Autowired
+	private LoginService loginService;
 	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -78,16 +84,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 	}
 	
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-		
-		auth.jdbcAuthentication()
-		.dataSource(dataSource)
-		.usersByUsernameQuery("select user_id, password from m_user where user_id = ?")
-		.authoritiesByUsernameQuery("select user_id, role from m_user where user_id = ?")
-		.passwordEncoder(passwordEncoder());
-
-	}
+	//@Override
+	//protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+	//	
+	//	auth.jdbcAuthentication()
+	//	.dataSource(dataSource)
+	//	.usersByUsernameQuery(USER_SQL)
+	//	.authoritiesByUsernameQuery(ROLE_SQL)
+	//	.passwordEncoder(passwordEncoder());
+	//	
+	//}
+	
+	@Autowired
+    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception{
+    	auth.userDetailsService(loginService).passwordEncoder(passwordEncoder());
+    }
 
 
 }
